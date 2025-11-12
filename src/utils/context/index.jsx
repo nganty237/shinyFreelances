@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
-
-export const Themecontext = createContext()
+import { useState } from "react";
+import { Themecontext } from "./Themecontext";
+import { SurveyContext } from "./Themecontext";
 
 export const Themeprovider = ({children}) => {
     const [theme, setheme] = useState('light')
@@ -13,3 +13,25 @@ export const Themeprovider = ({children}) => {
     </Themecontext.Provider>
 )
 }
+
+// ré-exporter le contexte pour permettre des imports depuis `src/utils/context`
+export { Themecontext };
+
+
+
+export const SurveyProvider = ({children}) =>{
+    const [answers, setanswers] = useState({})
+
+    const saveAnswers = (newAnwers) =>{
+        setanswers({...answers, ...newAnwers})
+    }
+
+    return (
+        <SurveyContext.Provider value = {{answers, saveAnswers}}>
+            {children}
+        </SurveyContext.Provider>
+    )
+
+}
+
+export { SurveyContext };

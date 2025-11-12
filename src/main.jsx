@@ -9,12 +9,15 @@ import Results from './pages/Results'
 import Freelances from './pages/Freelances' 
 import Footer from './components/Footer'
 import './index.css'
-import  Themeprovider  from './utils/context'
+import GlobalStyle from './utils/style/GlobalStyle'
+import  {Themeprovider, SurveyProvider}  from './utils/context'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode >
     <BrowserRouter>
     <Themeprovider>
+      <SurveyProvider>
+    <GlobalStyle />
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -24,6 +27,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
+      </SurveyProvider>
       </Themeprovider>
     </BrowserRouter>
   </StrictMode>,
