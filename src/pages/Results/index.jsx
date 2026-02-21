@@ -35,17 +35,17 @@ function Results() {
       </div>
     ) : (
       <div className="grid items-center justify-center">
-        <h1 className={`text-2xl font-bold mb-6 pl-10 ${theme === 'dark' && 'text-white'}`}>
+        <h1 className={`text-2xl font-bold mb-6 pl-10 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'}`}>
           Les compétences dont vous avez besoin :
           {resultsData &&
             resultsData.map((result, index) => (
-              <span key={result.title} className="text-blue-500">
+              <span key={result.title} className={`${theme === 'dark' ? 'text-indigo-400' : 'text-indigo-600'} font-semibold`}>
                 {index > 0 && ', '}
                 {result.title}
               </span>
             ))}
         </h1>
-        <Link to="/Freelances" className="bg-indigo-700 cursor-pointer p-3 text-white text-center rounded-xl hover:bg-indigo-800 w-fit ml-10 ">
+        <Link to="/Freelances" className="bg-indigo-700 cursor-pointer p-3 text-white text-center rounded-xl hover:bg-indigo-700 transition-colors w-fit ml-10 ">
           Découvrez nos profils
         </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 px-10">
@@ -55,8 +55,8 @@ function Results() {
                 key={result.title}
                 className="p-6 bg-gray-100 rounded-lg shadow-md"
               >
-                <h3 className="text-xl font-bold mb-2">{result.title}</h3>
-                <p className="text-gray-700">{result.description}</p>
+                <h3 className ={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-800'}`}>{result.title}</h3>
+                <p className = {`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{result.description}</p>
               </div>
             ))}
         </div>

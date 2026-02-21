@@ -39,10 +39,10 @@ return (
       </div>
     ) : (
       <div>
-        <h1 className={`${theme === 'dark' ? 'text-white' : 'text-black'} font-bold text-center lg:text-3xl lg:mb-5 lg text-2xl mb-2 mt-5`}>
+        <h1 className={`${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'} font-bold text-center lg:text-3xl lg:mb-5 lg text-2xl mb-2 mt-5`}>
           Trouvez votre prestataire
         </h1>
-        <h2 className="text-xl font-medium mb-6 text-gray-400 px-10 text-center">
+        <h2 className={`text-xl font-medium mb-6 px-10 text-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
           Chez Shiny nous réunissons les meilleurs profils pour vous.
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-2 mx-auto gap-y-6 px-8 pt-4 items-center justify-items-center">
