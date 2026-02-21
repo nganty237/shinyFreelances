@@ -1,12 +1,12 @@
 import {  useContext } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
-import { SurveyContext, Themecontext } from "../../utils/context"
-import { useFetch } from "../../utils/style/hooks"
+import { SurveyContext } from "../../utils/context"
+import { useFetch, useTheme } from "../../utils/style/hooks"
 
 function Survey() {
     const { questionNumber } = useParams()
-    const {theme} = useContext(Themecontext)
+    const {theme} = useTheme()
     const questionInt = parseInt(questionNumber)
     const questionPrecedente = questionInt <= 1 ? 1 : questionInt -1
     const questionSuivante = questionInt + 1
@@ -33,7 +33,7 @@ function Survey() {
                 { isloading?
                     (<div className="flex items-center flex-col justify-center  space-y-2">
                         <div className="p-2.5 border-[6px] border-[#5843E4] border-b-transparent rounded-[22px] h-0 w-0 animate-spin-loader"></div>
-                        <p >chargement...</p>
+                        <p className={`${theme ==='dark' && 'text-white'}`} >chargement...</p>
                     </div>)
                     :
                     (<span className={`m-4 lg:text-2xl text-center ${theme === 'dark' && 'text-white'}`}>{surveyData && surveyData[questionNumber]}</span>)

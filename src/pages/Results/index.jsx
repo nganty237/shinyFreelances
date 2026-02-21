@@ -1,8 +1,10 @@
 import { useContext, } from "react"
 import { SurveyContext } from "../../utils/context"
 import { useFetch } from "../../utils/style/hooks"
+import { Link } from "react-router-dom"
+import { Themecontext } from "../../utils/context"
 
-// cette permet de reperer les resultats entres par l'utilisateur
+// cette function permet de reperer les resultats entres par l'utilisateur
 function formatQueryParams(answers){
     const answersNumbers = Object.keys(answers)
 
@@ -15,7 +17,8 @@ function formatQueryParams(answers){
 
 function Results() {
     const { answers } = useContext(SurveyContext)
-    const { data, isloading, error } = useFetch(
+    const { theme } = useContext(Themecontext)
+    const { data, isloading, error } = useFetch( 
       `http://localhost:8000/results?${formatQueryParams(answers)}`
     )
   
@@ -32,7 +35,7 @@ function Results() {
       </div>
     ) : (
       <div className="grid items-center justify-center">
-        <h1 className="text-2xl font-bold mb-6">
+        <h1 className={`text-2xl font-bold mb-6 pl-10 ${theme === 'dark' && 'text-white'}`}>
           Les compétences dont vous avez besoin :
           {resultsData &&
             resultsData.map((result, index) => (
@@ -42,12 +45,12 @@ function Results() {
               </span>
             ))}
         </h1>
-        <button className="bg-indigo-700 cursor-pointer p-3 text-white text-center rounded-xl hover:bg-indigo-800">
+        <Link to="/Freelances" className="bg-indigo-700 cursor-pointer p-3 text-white text-center rounded-xl hover:bg-indigo-800 w-fit ml-10 ">
           Découvrez nos profils
-        </button>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 px-10">
           {resultsData &&
-            resultsData.map((result) => (
+            resultsData.map((result) => ( 
               <div
                 key={result.title}
                 className="p-6 bg-gray-100 rounded-lg shadow-md"

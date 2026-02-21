@@ -1,13 +1,11 @@
-import { useContext } from "react";
-import { Themecontext } from "../../utils/context";
-
+import { useTheme } from "../../utils/style/hooks"
 function Footer(){
-    const {toggleTheme , theme} = useContext(Themecontext)
+    const { theme } = useTheme();
     return (
-        <footer className="flex flex-row items-center justify-center h-20 mt-5  space-x-4 p-4">
-            <button onClick={()=>toggleTheme() } className="bg-indigo-700 rounded-xl cursor-pointer p-3 hover:bg-indigo-800">
-                changer de mode: {theme==="light"? '☀️':'🌙'}</button>
+        <footer className="flex flex-row items-center justify-center h-20 ">
+            <span className={`text-gray-500 ${theme === 'dark' && 'text-white'}`}>© 2025 Dyala Biginner</span>
         </footer>
     )
 }
+
 export default Footer

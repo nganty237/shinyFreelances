@@ -35,7 +35,7 @@ return (
     {loading ? (
       <div className="flex items-center flex-col justify-center h-screen space-y-2">
         <div className="p-2.5 border-[6px] border-[#5843E4] border-b-transparent rounded-[22px] h-0 w-0 animate-spin-loader"></div>
-        <p >chargement...</p>
+        <p className={`${theme==='dark' && 'text-white'}`}>chargement...</p>
       </div>
     ) : (
       <div>
@@ -45,7 +45,7 @@ return (
         <h2 className="text-xl font-medium mb-6 text-gray-400 px-10 text-center">
           Chez Shiny nous réunissons les meilleurs profils pour vous.
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4 mx-auto gap-y-6 px-10 pt-4 items-center justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-2 mx-auto gap-y-6 px-8 pt-4 items-center justify-items-center">
           {freelancesList.map((profile, index) => (
             <Card
               key={`${profile.name}-${index}`}
