@@ -35,3 +35,6 @@ export const useTheme = () => {
     const {theme ,toggleTheme} =useContext(Themecontext);
     return {theme, toggleTheme}
 }
+
+
+
