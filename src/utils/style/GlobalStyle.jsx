@@ -8,9 +8,15 @@ const StyledGlobalStyle = createGlobalStyle`
     }
  
     body {
+        background-color: ${({ isDarkMode }) => (isDarkMode ? "#1e293b": '#ffffff')};
+        margin: 0;
+        padding-top: 130px;
+    }
 
-        background-color: ${({ isDarkMode }) => (isDarkMode ? "#111827": '#ffffff')};
-        margin: 0;  
+    @media (min-width: 640px) {
+        body {
+            padding-top: 80px;
+        }
     }
 `
 

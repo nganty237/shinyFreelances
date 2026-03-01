@@ -46,9 +46,9 @@ return (
           Chez Shiny nous réunissons les meilleurs profils pour vous.
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-2 mx-auto gap-y-6 px-8 pt-4 items-center justify-items-center">
-          {freelancesList.map((profile, index) => (
+          {freelancesList.map((profile) => (
             <Card
-              key={`${profile.name}-${index}`}
+              key={profile.id}
               title={profile.name}
               picture={profile.picture}
               label={profile.job}

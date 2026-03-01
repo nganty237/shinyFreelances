@@ -31,7 +31,7 @@ function Results() {
     return isloading ? (
       <div className="flex items-center flex-col justify-center h-screen space-y-2">
         <div className="p-2.5 border-[6px] border-[#5843E4] border-b-transparent rounded-[22px] h-0 w-0 animate-spin-loader"></div>
-        <p>Chargement...</p>
+        <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-800'}`}>Chargement...</p>
       </div>
     ) : (
       <div className="grid items-center justify-center">

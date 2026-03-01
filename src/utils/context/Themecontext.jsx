@@ -1,5 +1,5 @@
 import { createContext} from "react";
 
-export const Themecontext = createContext()
+export const Themecontext = createContext('light')
 
 export const SurveyContext = createContext();

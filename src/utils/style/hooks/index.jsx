@@ -31,7 +31,7 @@ export function useFetch(url) {
     return {data, isloading, error}
 }
 
-export function useTheme(){
+export const useTheme = () => {
     const {theme ,toggleTheme} =useContext(Themecontext);
     return {theme, toggleTheme}
 }
