@@ -34,6 +34,7 @@ export const SurveyProvider = ({children}) =>{
         const savedAnswers = localStorage.getItem('answers')
         return savedAnswers ? JSON.parse(savedAnswers) : {} 
     })
+    
 
     useEffect(() => {
         localStorage.setItem('answers', JSON.stringify(answers))
@@ -43,8 +44,11 @@ export const SurveyProvider = ({children}) =>{
         setanswers({...answers, ...newAnwers})
     }
 
+    const resetAnswers = () =>{
+        setanswers({})
+    }
     return (
-        <SurveyContext.Provider value = {{answers, saveAnswers}}>
+        <SurveyContext.Provider value = {{answers, saveAnswers, resetAnswers}}>
             {children}
         </SurveyContext.Provider>
     )

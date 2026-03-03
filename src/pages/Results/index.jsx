@@ -36,8 +36,8 @@ function Results() {
     ) : (
       <div className="grid items-center justify-center">
         <h1 className={`text-2xl font-bold mb-6 pl-10 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'}`}>
-          Les compétences dont vous avez besoin :
-          {resultsData &&
+          Les compétences et profiles dont vous avez besoin :
+          {resultsData && 
             resultsData.map((result, index) => (
               <span key={result.title} className={`${theme === 'dark' ? 'text-indigo-400' : 'text-indigo-600'} font-semibold`}>
                 {index > 0 && ', '}

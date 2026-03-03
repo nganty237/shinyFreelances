@@ -1,19 +1,15 @@
 import { Link } from "react-router-dom";
+import { Themecontext }  from "../../utils/context";
+import { useContext } from "react";
 function Error() {
-       return (
-    <>
-      {/*
-        This example requires updating your template:
+  const {theme} =useContext(Themecontext)
 
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
+       return (
+    <div>
       <main className="grid  min-h-screen  place-items-center bg-indigo-300 px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-base font-semibold text-indigo-400">404</p>
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+          <h1 className={`mt-4 text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl ${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'}`}>
             Page not found
           </h1>
           <p className="mt-6 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
@@ -33,7 +29,7 @@ function Error() {
           </div>
         </div>
       </main>
-    </>
+    </div>
     ) 
 }
  

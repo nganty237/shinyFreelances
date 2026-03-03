@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
     <GlobalStyle />
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route index element={<Home />} />
         <Route path='/survey/:questionNumber' element={<Survey />} />
         <Route path='/results' element={<Results />} />
         <Route path='/freelances' element={<Freelances />} />

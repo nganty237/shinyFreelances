@@ -45,7 +45,7 @@ return (
         <h2 className={`text-xl font-medium mb-6 px-10 text-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
           Chez Shiny nous réunissons les meilleurs profils pour vous.
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-2 mx-auto gap-y-6 px-8 pt-4 items-center justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4  gap-2 mx-auto gap-y-6 px-8 pt-4 items-center justify-items-center">
           {freelancesList.map((profile) => (
             <Card
               key={profile.id}
