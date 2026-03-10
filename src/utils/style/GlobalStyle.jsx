@@ -10,12 +10,12 @@ const StyledGlobalStyle = createGlobalStyle`
     body {
         background-color: ${({ isDarkMode }) => (isDarkMode ? "#1e293b": '#ffffff')};
         margin: 0;
-        padding-top: 130px;
+        padding-top: 70px;
     }
 
     @media (min-width: 640px) {
         body {
-            padding-top: 80px;
+            padding-top: 90px;
         }
     }
 `

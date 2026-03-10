@@ -18,16 +18,20 @@ createRoot(document.getElementById('root')).render(
     <Themeprovider>
       <SurveyProvider>
     <GlobalStyle />
-      <Header />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path='/survey/:questionNumber' element={<Survey />} />
-        <Route path='/results' element={<Results />} />
-        <Route path='/freelances' element={<Freelances />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-      <Footer />
-      </SurveyProvider>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 flex flex-col">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='/survey/:questionNumber' element={<Survey />} />
+            <Route path='/results' element={<Results />} />
+            <Route path='/freelances' element={<Freelances />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </SurveyProvider>
       </Themeprovider>
     </BrowserRouter>
   </StrictMode>,

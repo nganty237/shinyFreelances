@@ -27,8 +27,8 @@ function Survey() {
             if (error) return <span className="flex items-center justify-center ">Oups, il y a eu un problème.</span>
 
     return (
-        <div className={`flex flex-col items-center justify-center ${theme === 'dark' && 'bg-gray-900'}`}>
-            <div className="flex flex-col py-10 lg:mt-20 space-y-4 mt-5 px-10 items-center">
+        <div className="flex flex-col items-center justify-center ">
+            <div className="flex flex-col py-6 lg:py-10 lg:mt-5 space-y-4  px-10 items-center">
                 <h2 className={`font-bold lg:text-3xl underline ${theme === 'dark' ? 'text-gray-100': 'text-gray-800'}`}>Question {questionNumber}</h2>
                 { isloading?
                     (<div className="flex items-center flex-col justify-center  space-y-2">
